@@ -1,0 +1,1 @@
+OCR đọc file 350 Jewelry... và snapshot tất cả hình có trong file, không dính chữ xung quanh, cắt từng hình riêng ra vì sau đó tôi cần làm SOP, đặt lại tên file snapshot thể hiện ý nghĩa hình

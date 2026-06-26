@@ -1,0 +1,1 @@
+OCR đọc 2 file Hướng dẫn 01 và 06, lập bảng so sánh điểm khác nhau giữa 2 file, ghi ra md, dạng bảng

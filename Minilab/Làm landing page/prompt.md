@@ -1,0 +1,1 @@
+Đọc file outline và selling point, làm 1 landing page, local trước đợi tôi duyệt rồi dùng mcp publish

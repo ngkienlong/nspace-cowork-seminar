@@ -1,0 +1,1 @@
+OCR đọc file Nghị định 53, viết nguyên văn ra md, convert sang docx, giữ nguyên trình bày như file pdf gốc

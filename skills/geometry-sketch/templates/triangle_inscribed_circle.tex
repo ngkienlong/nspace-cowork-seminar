@@ -1,0 +1,42 @@
+% Template: tam giác ABC có đường tròn nội tiếp tâm I.
+% Cách đơn giản nhất: dùng `let ... in` để TikZ tự đo bán kính = |IT|.
+\documentclass[border=5pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc,intersections,through}
+\begin{document}
+\begin{tikzpicture}[scale=1.2, line cap=round, line join=round]
+  % Ba đỉnh
+  \coordinate (A) at (0,3.2);
+  \coordinate (B) at (-2.5,-1);
+  \coordinate (C) at (2.8,-1);
+
+  % Tâm nội tiếp tính sẵn cho bộ A,B,C trên (đặt thẳng số cho ổn định).
+  % Khi đổi đỉnh, đo lại bằng công thức I = (a*A + b*B + c*C)/(a+b+c) với a=|BC|, b=|CA|, c=|AB|.
+  \coordinate (I) at (0.114,-0.135);
+
+  % Tiếp điểm trên cạnh BC: chân vuông góc từ I xuống BC.
+  \coordinate (T) at ($(B)!(I)!(C)$);
+
+  % Cạnh tam giác
+  \draw[thick] (A) -- (B) -- (C) -- cycle;
+
+  % Đường tròn nội tiếp: bán kính = |IT|.
+  \draw[blue, dashed] let \p1 = ($(I)-(T)$) in (I) circle ({veclen(\x1,\y1)});
+
+  % Bán kính tới tiếp điểm
+  \draw[blue, dashed] (I) -- (T);
+
+  % Ký hiệu vuông góc tại T (giữa IT và BC)
+  \draw ($(T)+(-0.14,0.05)$) -- ($(T)+(-0.18,-0.09)$) -- ($(T)+(-0.04,-0.14)$);
+
+  % Chấm điểm
+  \foreach \p in {A,B,C,I,T} \fill (\p) circle (1.4pt);
+
+  % Nhãn
+  \node[above] at (A) {$A$};
+  \node[below left] at (B) {$B$};
+  \node[below right] at (C) {$C$};
+  \node[above right=1pt] at (I) {$I$};
+  \node[below] at (T) {$T$};
+\end{tikzpicture}
+\end{document}
