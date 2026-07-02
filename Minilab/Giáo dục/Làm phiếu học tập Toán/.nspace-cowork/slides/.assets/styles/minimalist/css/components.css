@@ -1,0 +1,26 @@
+/* minimalist · components.css
+   Reusable pieces: hairline divider, bullet & numbered lists, footer folio,
+   brandmark, plain card. Depends on theme-tokens + typography. */
+.divider { width: 100%; height: 0; border-top: var(--rule); }
+.divider--ink { border-top: var(--rule-strong); width: 56px; }
+.bullets { list-style: none; margin: 0; padding: 0; }
+.bullets li {
+  display: flex; gap: 16px; padding: 16px 0;
+  border-bottom: var(--rule); font-size: 24px; line-height: 1.4;
+}
+.bullets li::before {
+  content: ""; flex: 0 0 8px; width: 8px; height: 1px;
+  margin-top: 18px; background: var(--ink);
+}
+.num-list { counter-reset: n; list-style: none; margin: 0; padding: 0; }
+.num-list li {
+  counter-increment: n; display: flex; gap: 20px;
+  padding: 16px 0; border-bottom: var(--rule);
+}
+.num-list li::before {
+  content: counter(n, decimal-leading-zero);
+  font-size: 16px; color: var(--faint); letter-spacing: .1em; padding-top: 6px;
+}
+.card { border: var(--rule); padding: 28px; border-radius: var(--radius); }
+.folio { position: absolute; left: var(--pad-x); bottom: 40px; font-size: 14px; color: var(--faint); letter-spacing: .1em; }
+.brandmark { position: absolute; right: var(--pad-x); bottom: 40px; font-size: 14px; color: var(--faint); letter-spacing: .1em; }

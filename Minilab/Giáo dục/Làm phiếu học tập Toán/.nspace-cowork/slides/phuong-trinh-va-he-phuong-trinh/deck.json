@@ -1,0 +1,199 @@
+{
+  "style": "toan-hoc",
+  "slides": [
+    {
+      "type": "cover-title",
+      "id": "s1",
+      "kicker": "Chương I – Bài 1",
+      "title": "Phương trình và hệ hai phương trình bậc nhất hai ẩn",
+      "subtitle": "Toán 9 – Đại số"
+    },
+    {
+      "type": "section-divider",
+      "id": "s2",
+      "kicker": "Phần A",
+      "title": "Lý thuyết"
+    },
+    {
+      "type": "bulleted-list",
+      "id": "s3",
+      "kicker": "Định nghĩa",
+      "title": "Phương trình bậc nhất hai ẩn",
+      "bullets": [
+        "Dạng tổng quát: ax + by = c (a ≠ 0 hoặc b ≠ 0)",
+        "x, y là hai ẩn; a, b, c là các hệ số đã biết",
+        "Ví dụ: 2x − 3y = 5 là phương trình bậc nhất hai ẩn"
+      ]
+    },
+    {
+      "type": "two-column",
+      "id": "s4",
+      "kicker": "Khái niệm",
+      "title": "Nghiệm của phương trình",
+      "left": {
+        "heading": "Định nghĩa",
+        "body": "Cặp số (x₀; y₀) là nghiệm nếu khi thay vào phương trình ta được đẳng thức đúng: ax₀ + by₀ = c"
+      },
+      "right": {
+        "heading": "Ví dụ",
+        "body": "Phương trình x + 2y = 3:\n• (1; 1) là nghiệm vì 1 + 2·1 = 3 ✓\n• (3; 0) là nghiệm vì 3 + 2·0 = 3 ✓"
+      }
+    },
+    {
+      "type": "bulleted-list",
+      "id": "s5",
+      "kicker": "Tính chất quan trọng",
+      "title": "Số nghiệm & biểu diễn hình học",
+      "bullets": [
+        "Mỗi phương trình bậc nhất hai ẩn có VÔ SỐ nghiệm",
+        "Tập nghiệm biểu diễn bởi một ĐƯỜNG THẲNG trên mặt phẳng tọa độ",
+        "Đường thẳng đó gọi là đường thẳng ax + by = c"
+      ]
+    },
+    {
+      "type": "two-column",
+      "id": "s6",
+      "kicker": "Ví dụ minh hoạ",
+      "title": "Các trường hợp đặc biệt",
+      "left": {
+        "heading": "a = 0 → dạng y = k",
+        "body": "0x + y = −2 → y = −2\nNghiệm: (x; −2) với mọi x\n→ Đường thẳng song song trục Ox"
+      },
+      "right": {
+        "heading": "b = 0 → dạng x = k",
+        "body": "x + 0y = 3 → x = 3\nNghiệm: (3; y) với mọi y\n→ Đường thẳng song song trục Oy"
+      }
+    },
+    {
+      "type": "section-divider",
+      "id": "s7",
+      "kicker": "Tiếp theo",
+      "title": "Hệ hai phương trình bậc nhất hai ẩn"
+    },
+    {
+      "type": "bulleted-list",
+      "id": "s8",
+      "kicker": "Định nghĩa",
+      "title": "Hệ hai phương trình bậc nhất hai ẩn",
+      "bullets": [
+        "Gồm hai phương trình bậc nhất hai ẩn ghép lại",
+        "Dạng: { ax + by = c ; a'x + b'y = c' }",
+        "Nghiệm của hệ: cặp số đồng thời thoả cả hai phương trình"
+      ]
+    },
+    {
+      "type": "two-column",
+      "id": "s9",
+      "kicker": "Ý nghĩa hình học",
+      "title": "Nghiệm của hệ = Giao điểm hai đường thẳng",
+      "left": {
+        "heading": "Cắt nhau → 1 nghiệm",
+        "body": "Hai đường thẳng cắt nhau tại đúng 1 điểm → Hệ có nghiệm duy nhất"
+      },
+      "right": {
+        "heading": "Song song → vô nghiệm",
+        "body": "Hai đường thẳng song song → Không có giao điểm → Hệ vô nghiệm"
+      }
+    },
+    {
+      "type": "section-divider",
+      "id": "s10",
+      "kicker": "Phần B",
+      "title": "Bài tập"
+    },
+    {
+      "type": "bulleted-list",
+      "id": "s11",
+      "kicker": "Bài 1 – Nhận dạng",
+      "title": "Phương trình nào là bậc nhất hai ẩn?",
+      "bullets": [
+        "a) 5x − 8y = 0",
+        "b) 4x + 0y = −2",
+        "c) 0x + 0y = 1",
+        "d) 0x − 3y = 9"
+      ]
+    },
+    {
+      "type": "two-column",
+      "id": "s12",
+      "kicker": "Bài 2",
+      "title": "Tìm nghiệm của 2x − y = 1",
+      "left": {
+        "heading": "Yêu cầu",
+        "body": "Hoàn thành bảng giá trị:\nx = −1, −0.5, 0, 0.5, 1, 2\ny = 2x − 1 = ?"
+      },
+      "right": {
+        "heading": "Nghiệm tổng quát",
+        "body": "y = 2x − 1\nNghiệm: (x; 2x−1) với mọi x ∈ ℝ"
+      }
+    },
+    {
+      "type": "bulleted-list",
+      "id": "s13",
+      "kicker": "Bài 3",
+      "title": "Viết nghiệm & biểu diễn hình học",
+      "bullets": [
+        "a) 2x − y = 3 → y = 2x − 3",
+        "b) 0x + 2y = −4 → y = −2 (đường ngang)",
+        "c) 3x + 0y = 5 → x = 5/3 (đường dọc)"
+      ]
+    },
+    {
+      "type": "two-column",
+      "id": "s14",
+      "kicker": "Bài 4",
+      "title": "Kiểm tra nghiệm của hệ phương trình",
+      "left": {
+        "heading": "Hệ phương trình",
+        "body": "{ 2x = −6\n  5x + 4y = 1 }\n\n→ Có phải hệ PT bậc nhất hai ẩn?"
+      },
+      "right": {
+        "heading": "Kiểm tra (−3; 4)",
+        "body": "• 2·(−3) = −6 ✓\n• 5·(−3) + 4·4 = −15 + 16 = 1 ✓\n→ (−3; 4) là nghiệm của hệ"
+      }
+    },
+    {
+      "type": "bulleted-list",
+      "id": "s15",
+      "kicker": "Bài 5",
+      "title": "Tìm nghiệm chung của hệ",
+      "bullets": [
+        "Cho 5 cặp số: (−2;1), (0;2), (1;0), (1.5;3), (4;−3)",
+        "PT (1): 5x + 4y = 8",
+        "PT (2): 3x + 5y = −3",
+        "Tìm cặp thoả cả (1) và (2) → nghiệm của hệ"
+      ]
+    },
+    {
+      "type": "quote",
+      "id": "s16",
+      "quote": "Quýt, cam mười bảy quả tươi\nĐem chia cho một trăm người cùng vui.\nChia ba mỗi quả quýt rồi,\nCòn cam, mỗi quả chia mười vừa xinh.",
+      "attribution": "Bài 6 – Bài toán cổ (Vận dụng)"
+    },
+    {
+      "type": "two-column",
+      "id": "s17",
+      "kicker": "Bài 6 – Lời giải",
+      "title": "Lập hệ phương trình từ bài toán cổ",
+      "left": {
+        "heading": "Đặt ẩn",
+        "body": "x: số cam\ny: số quýt\n(x, y ∈ ℕ*)"
+      },
+      "right": {
+        "heading": "Hệ phương trình",
+        "body": "x + y = 17 (tổng 17 quả)\nx/10 + y/3 = 1 (100 miếng cho 100 người)"
+      }
+    },
+    {
+      "type": "bulleted-list",
+      "id": "s18",
+      "kicker": "Tổng kết",
+      "title": "Ghi nhớ bài học",
+      "bullets": [
+        "PT bậc nhất hai ẩn: ax + by = c (a≠0 hoặc b≠0) → vô số nghiệm → đường thẳng",
+        "Hệ hai PT: nghiệm chung = giao điểm hai đường thẳng",
+        "Luôn kiểm tra nghiệm bằng cách thay ngược vào phương trình"
+      ]
+    }
+  ]
+}

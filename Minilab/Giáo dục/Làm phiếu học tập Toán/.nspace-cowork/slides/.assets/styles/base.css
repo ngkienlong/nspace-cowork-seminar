@@ -1,0 +1,61 @@
+/* base.css — shared foundation for every HTML slide, in every style.
+
+   Linked FIRST by every slide (before a style's theme-tokens / typography /
+   slide-layouts / components), so a style's CSS always loads after and can
+   override anything here.
+
+   Keep this strictly STYLE-AGNOSTIC: no palette, no fonts, no decoration —
+   only the universal slide canvas, a minimal reset, browser-preview
+   ergonomics, PDF page sizing, and the reduced-motion guard. Anything with a
+   color or typeface belongs in a style's theme-tokens.css / typography.css. */
+
+/* ---- Minimal reset ----------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img, svg, video, canvas { display: block; max-width: 100%; }
+
+/* ---- The slide canvas -------------------------------------------------- */
+/* Every slide is a fixed 1280x720 (16:9) box that maps 1:1 onto a
+   13.333in x 7.5in deck (1px -> 0.75pt). Styles paint their own background and
+   add padding on top of this geometry. */
+.slide {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Browser-preview ergonomics ---------------------------------------- */
+/* Active ONLY when the window is larger than the slide, so a native 1280x720
+   render is left completely untouched (the slide stays flush at 0,0 with no
+   margin or backdrop). On a bigger screen, slides are centered on a neutral
+   backdrop and lifted with a soft shadow; multiple slides stack into a
+   scrollable column. */
+@media (min-width: 1281px), (min-height: 721px) {
+  body { background: var(--deck-backdrop, #c9ccd1); }
+  .slide { margin: 32px auto; box-shadow: 0 10px 40px rgba(0, 0, 0, .18); }
+}
+
+/* ---- Print / PDF export ------------------------------------------------ */
+/* One slide per page at the exact deck size. */
+@page { size: 1280px 720px; margin: 0; }
+@media print {
+  body { background: none; }
+  .slide { margin: 0; box-shadow: none; break-after: page; page-break-after: always; }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+}
+
+/* ---- Motion / accessibility -------------------------------------------- */
+/* Honor the OS "reduce motion" setting. The !important here also neutralizes
+   the inline `transition` the per-style entrance scripts set (a stylesheet
+   !important beats an inline style), so content simply appears in its final
+   state instead of animating in. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

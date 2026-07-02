@@ -1,0 +1,118 @@
+{
+  "mcpServers": {
+    "coworkai-website-hosting": {
+      "url": "https://websitehosting.coworkai.us/mcp",
+      "headers": {
+        "Authorization": "Bearer ikh55rUeFwOe3s0PkBg-Ptu6uWP4ZcJTgD7vD737TJs"
+      },
+      "autoApprove": [
+        "host_html",
+        "edit_html",
+        "get_upload_permanent_public_hosting_url"
+      ],
+      "disabledTools": []
+    },
+    "coworkai-generate-image": {
+      "url": "https://imagegen.coworkai.us/mcp",
+      "headers": {
+        "Authorization": "Bearer ikh55rUeFwOe3s0PkBg-Ptu6uWP4ZcJTgD7vD737TJs"
+      },
+      "autoApprove": [
+        "generate_image",
+        "get_upload_url",
+        "vectorize_image",
+        "edit_image",
+        "upscale_image"
+      ]
+    },
+    "coworkai-generate-tts": {
+      "url": "https://ttsgen.coworkai.us/mcp",
+      "headers": {
+        "Authorization": "Bearer ikh55rUeFwOe3s0PkBg-Ptu6uWP4ZcJTgD7vD737TJs"
+      },
+      "autoApprove": [
+        "generate_image",
+        "synthesize_speech"
+      ]
+    },
+    "coworkai-generate-stt": {
+      "url": "https://sttgen.coworkai.us/mcp",
+      "headers": {
+        "Authorization": "Bearer ikh55rUeFwOe3s0PkBg-Ptu6uWP4ZcJTgD7vD737TJs"
+      },
+      "autoApprove": [
+        "transcribe_audio",
+        "get_upload_url"
+      ]
+    },
+    "coworkai-ocr": {
+      "url": "https://ocr.coworkai.us/mcp",
+      "headers": {
+        "Authorization": "Bearer ikh55rUeFwOe3s0PkBg-Ptu6uWP4ZcJTgD7vD737TJs"
+      },
+      "autoApprove": [
+        "get_upload_url",
+        "extract_text"
+      ]
+    },
+    "coworkai-research": {
+      "url": "https://research.coworkai.us/mcp",
+      "headers": {
+        "Authorization": "Bearer ikh55rUeFwOe3s0PkBg-Ptu6uWP4ZcJTgD7vD737TJs"
+      },
+      "autoApprove": [
+        "get_markdown_from_url",
+        "get_basic_research_results"
+      ]
+    },
+    "coworkai-reminder": {
+      "url": "https://reminder.coworkai.us/mcp",
+      "headers": {
+        "Authorization": "Bearer ikh55rUeFwOe3s0PkBg-Ptu6uWP4ZcJTgD7vD737TJs"
+      },
+      "autoApprove": [
+        "list_reminders",
+        "add_reminder",
+        "remove_reminder"
+      ]
+    },
+    "coworkai-slides": {
+      "url": "https://slidesgen.coworkai.us/mcp",
+      "headers": {
+        "Authorization": "Bearer ikh55rUeFwOe3s0PkBg-Ptu6uWP4ZcJTgD7vD737TJs"
+      },
+      "autoApprove": [
+        "search_stock_photos",
+        "get_image_upload_url",
+        "list_icons",
+        "get_icon_svg",
+        "render_slide",
+        "build_pptx",
+        "render_deck"
+      ]
+    },
+    "coworkai-fileconversion": {
+      "url": "https://fileconversion.coworkai.us/mcp",
+      "headers": {
+        "Authorization": "Bearer ikh55rUeFwOe3s0PkBg-Ptu6uWP4ZcJTgD7vD737TJs"
+      },
+      "autoApprove": [
+        "get_upload_url",
+        "convert_file",
+        "render_to_image"
+      ]
+    },
+    "coworkai-mediasearch": {
+      "url": "https://mediasearch.coworkai.us/mcp",
+      "headers": {
+        "Authorization": "Bearer ikh55rUeFwOe3s0PkBg-Ptu6uWP4ZcJTgD7vD737TJs"
+      },
+      "autoApprove": [
+        "search_stock_photos",
+        "search_stock_videos",
+        "search_stock_sound_effects",
+        "search_stock_music"
+      ]
+    }
+  }
+}

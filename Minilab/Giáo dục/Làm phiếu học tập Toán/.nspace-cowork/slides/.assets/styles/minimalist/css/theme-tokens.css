@@ -1,0 +1,21 @@
+/* minimalist · theme-tokens.css
+   Color, spacing and radius variables for the Minimalist slide style.
+   Near-monochrome, hairline rules, a single ink accent. Import this first. */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #fafafa;
+  --ink: #141414;
+  --muted: #6e6e6e;
+  --faint: #9b9b9b;
+  --hairline: #e6e6e6;
+  --accent: #141414;
+  --on-accent: #ffffff;
+
+  --pad-x: 96px;
+  --pad-y: 72px;
+  --gap: 28px;
+  --radius: 0px;
+
+  --rule: 1px solid var(--hairline);
+  --rule-strong: 2px solid var(--ink);
+}
