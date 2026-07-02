@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mừng 81 năm Quốc khánh Việt Nam | 2/9/1945 - 2/9/2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red: #D32F2F;
+            --red-dark: #B71C1C;
+            --gold: #FFD600;
+            --gold-light: #FFEB3B;
+            --navy: #0B1F3A;
+            --white: #FFFFFF;
+            --cream: #FFF8E1;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Be Vietnam Pro', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-60px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
+
+        .hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; background: url('https://images.pexels.com/photos/1503520/pexels-photo-1503520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') center/cover no-repeat; filter: brightness(0.4); z-index: 0; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(183,28,28,0.4) 0%, rgba(11,31,58,0.8) 100%); z-index: 1; }
+        .hero-content { position: relative; z-index: 10; max-width: 900px; padding: 2rem; }
+        .hero-star { width: 80px; height: 80px; margin: 0 auto 1.5rem; animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255,214,0,0.5)); } 50% { transform: scale(1.1); filter: drop-shadow(0 0 25px rgba(255,214,0,0.9)); } }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--gold); text-shadow: 0 2px 20px rgba(255,214,0,0.3); margin-bottom: 1rem; line-height: 1.3; }
+        .hero-subtitle { font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 300; color: var(--white); letter-spacing: 2px; }
+        .hero-date { font-size: clamp(1rem, 2.5vw, 1.4rem); color: var(--gold-light); font-weight: 600; letter-spacing: 4px; margin-top: 1rem; }
+        .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 10; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
+        .scroll-indicator svg { width: 30px; height: 30px; stroke: var(--gold); opacity: 0.7; }
+        #fireworks-canvas { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+
+        .quote-section { padding: 100px 2rem; background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 50%, #c62828 100%); text-align: center; position: relative; overflow: hidden; }
+        .quote-section::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at center, rgba(255,214,0,0.05) 0%, transparent 70%); animation: rotateGlow 20s linear infinite; }
+        @keyframes rotateGlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .quote-text { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 4vw, 2.8rem); font-style: italic; color: var(--gold); max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; position: relative; }
+        .quote-author { font-size: 1.2rem; color: var(--white); font-weight: 500; opacity: 0.9; }
+
+        .timeline-section { padding: 100px 2rem; background: var(--navy); }
+        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--gold); margin-bottom: 4rem; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold); margin: 1rem auto 0; border-radius: 2px; }
+        .timeline { max-width: 900px; margin: 0 auto; position: relative; padding-left: 40px; }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--gold), var(--red), var(--gold)); border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 30px; }
+        .timeline-item::before { content: ''; position: absolute; left: -32px; top: 5px; width: 16px; height: 16px; background: var(--gold); border-radius: 50%; border: 3px solid var(--navy); box-shadow: 0 0 10px rgba(255,214,0,0.5); }
+        .timeline-year { font-size: 1.6rem; font-weight: 800; color: var(--gold); margin-bottom: 0.3rem; }
+        .timeline-event { font-size: 1.1rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; }
+        .timeline-desc { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+        .achievements-section { padding: 100px 2rem; background: linear-gradient(180deg, #1a1a2e 0%, var(--navy) 100%); }
+        .achievements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+        .achievement-card { background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,214,0,0.15); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; backdrop-filter: blur(10px); }
+        .achievement-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(255,214,0,0.1); border-color: rgba(255,214,0,0.4); }
+        .achievement-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .achievement-title { font-size: 1.2rem; font-weight: 700; color: var(--gold); margin-bottom: 0.8rem; }
+        .achievement-desc { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+        .map-section { padding: 100px 2rem; background: var(--red-dark); text-align: center; position: relative; overflow: hidden; }
+        .map-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255,214,0,0.08) 0%, transparent 60%); }
+        .map-container { max-width: 500px; margin: 0 auto; position: relative; }
+        .map-container svg { width: 100%; height: auto; filter: drop-shadow(0 0 30px rgba(255,214,0,0.2)); }
+        .map-label { font-size: 0.75rem; fill: var(--gold); font-weight: 700; text-anchor: middle; }
+        .map-caption { margin-top: 2rem; font-size: 1.1rem; color: var(--cream); font-weight: 500; }
+
+        .banner-section { padding: 100px 2rem; background: linear-gradient(135deg, var(--navy) 0%, #1a1a2e 50%, var(--navy) 100%); text-align: center; position: relative; }
+        .banner-section::before { content: ''; position: absolute; inset: 0; background: url('https://images.pexels.com/photos/20123963/pexels-photo-20123963.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') center/cover no-repeat; opacity: 0.1; }
+        .slogans { position: relative; max-width: 800px; margin: 0 auto; }
+        .slogan { font-family: 'Playfair Display', serif; font-size: clamp(1.1rem, 3vw, 1.6rem); color: var(--gold); margin-bottom: 1.5rem; font-weight: 700; line-height: 1.5; text-shadow: 0 2px 10px rgba(255,214,0,0.2); }
+
+        .footer { padding: 2rem; background: #050d1a; text-align: center; border-top: 1px solid rgba(255,214,0,0.1); }
+        .footer p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.8; }
+
+        @media (max-width: 768px) {
+            .hero-star { width: 60px; height: 60px; }
+            .timeline { padding-left: 30px; }
+            .timeline-item { padding-left: 20px; }
+            .achievements-grid { grid-template-columns: 1fr; max-width: 400px; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <canvas id="fireworks-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-star">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,5 61,38 97,38 68,59 79,93 50,72 21,93 32,59 3,38 39,38" fill="#FFD600" stroke="#FFA000" stroke-width="1"/>
+                </svg>
+            </div>
+            <h1 class="hero-title">Mừng 81 năm Quốc khánh<br>nước Cộng hòa Xã hội Chủ nghĩa Việt Nam</h1>
+            <p class="hero-subtitle">Độc lập – Tự do – Hạnh phúc</p>
+            <p class="hero-date">★ 2/9/1945 – 2/9/2026 ★</p>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="reveal">
+            <p class="quote-text">"Không có gì quý hơn độc lập, tự do"</p>
+            <p class="quote-author">— Chủ tịch Hồ Chí Minh —</p>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <h2 class="section-title reveal">Dấu mốc lịch sử</h2>
+        <div class="timeline">
+            <div class="timeline-item reveal-left">
+                <div class="timeline-year">1945</div>
+                <div class="timeline-event">Tuyên ngôn Độc lập</div>
+                <div class="timeline-desc">Ngày 2/9/1945, tại Quảng trường Ba Đình, Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.</div>
+            </div>
+            <div class="timeline-item reveal-left">
+                <div class="timeline-year">1954</div>
+                <div class="timeline-event">Chiến thắng Điện Biên Phủ</div>
+                <div class="timeline-desc">Chiến thắng "lừng lẫy năm châu, chấn động địa cầu" kết thúc 9 năm kháng chiến chống thực dân Pháp, giải phóng miền Bắc.</div>
+            </div>
+            <div class="timeline-item reveal-left">
+                <div class="timeline-year">1975</div>
+                <div class="timeline-event">Thống nhất đất nước</div>
+                <div class="timeline-desc">Ngày 30/4/1975, chiến dịch Hồ Chí Minh toàn thắng, non sông thu về một mối, cả nước đi lên chủ nghĩa xã hội.</div>
+            </div>
+            <div class="timeline-item reveal-left">
+                <div class="timeline-year">2026</div>
+                <div class="timeline-event">Việt Nam hội nhập &amp; phát triển</div>
+                <div class="timeline-desc">81 năm xây dựng và bảo vệ Tổ quốc, Việt Nam vững bước trên con đường đổi mới, hội nhập quốc tế sâu rộng.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements-section">
+        <h2 class="section-title reveal">Thành tựu nổi bật</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card reveal">
+                <div class="achievement-icon">📈</div>
+                <div class="achievement-title">Kinh tế tăng trưởng</div>
+                <div class="achievement-desc">GDP tăng trưởng ấn tượng, Việt Nam trở thành một trong những nền kinh tế năng động nhất khu vực Đông Nam Á.</div>
+            </div>
+            <div class="achievement-card reveal">
+                <div class="achievement-icon">🌏</div>
+                <div class="achievement-title">Hội nhập quốc tế</div>
+                <div class="achievement-desc">Quan hệ ngoại giao với hơn 190 quốc gia, thành viên tích cực của ASEAN, APEC, WTO và nhiều tổ chức quốc tế.</div>
+            </div>
+            <div class="achievement-card reveal">
+                <div class="achievement-icon">🏛️</div>
+                <div class="achievement-title">Di sản văn hóa</div>
+                <div class="achievement-desc">Nhiều di sản UNESCO: Vịnh Hạ Long, Phong Nha - Kẻ Bàng, Hoàng thành Thăng Long, Nhã nhạc cung đình Huế.</div>
+            </div>
+            <div class="achievement-card reveal">
+                <div class="achievement-icon">💻</div>
+                <div class="achievement-title">Chuyển đổi số</div>
+                <div class="achievement-desc">Đẩy mạnh chuyển đổi số quốc gia, phát triển kinh tế số, xây dựng chính phủ điện tử phục vụ người dân.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <h2 class="section-title reveal" style="color: var(--gold);">Tổ quốc Việt Nam thống nhất</h2>
+        <div class="map-container reveal">
+            <svg viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FFD600;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#FFA000;stop-opacity:1"/>
+                    </linearGradient>
+                    <filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <path d="M180,50 C190,55 210,58 220,65 C230,72 235,80 230,90 C225,100 215,105 220,115 C225,125 240,130 245,140 C250,150 248,160 240,170 C232,180 225,185 220,195 C215,205 218,215 225,225 C232,235 240,245 245,255 C250,265 252,275 248,285 C244,295 238,305 235,315 C232,325 230,335 232,345 C234,355 238,365 240,375 C242,385 240,395 235,405 C230,415 222,425 218,435 C214,445 212,455 215,465 C218,475 225,485 230,495 C235,505 238,515 235,525 C232,535 225,540 218,545 C211,550 205,555 200,560 C195,565 190,572 185,578 C180,584 175,588 170,585 C165,582 162,575 165,568 C168,561 175,555 178,548 C181,541 180,534 175,528 C170,522 162,518 158,512 C154,506 152,498 155,492 C158,486 165,482 170,476 C175,470 178,462 175,455 C172,448 165,442 160,436 C155,430 152,422 155,415 C158,408 165,402 168,395 C171,388 170,380 165,374 C160,368 152,365 148,358 C144,351 142,342 145,335 C148,328 155,322 160,315 C165,308 168,300 165,292 C162,284 155,278 150,270 C145,262 142,252 145,244 C148,236 155,230 162,225 C169,220 175,215 178,208 C181,201 180,192 176,185 C172,178 165,174 162,167 C159,160 160,152 165,146 C170,140 178,136 183,130 C188,124 190,116 188,108 C186,100 180,95 178,88 C176,81 178,72 182,66 C186,60 185,52 180,50 Z" fill="url(#mapGrad)" stroke="#FFA000" stroke-width="1.5" filter="url(#glow)"/>
+                <g class="island-group">
+                    <circle cx="290" cy="280" r="4" fill="#FFD600" opacity="0.9"/>
+                    <circle cx="298" cy="275" r="3" fill="#FFD600" opacity="0.8"/>
+                    <circle cx="285" cy="272" r="2.5" fill="#FFD600" opacity="0.8"/>
+                    <circle cx="295" cy="285" r="2" fill="#FFD600" opacity="0.7"/>
+                    <circle cx="302" cy="280" r="2" fill="#FFD600" opacity="0.7"/>
+                    <text x="293" y="300" class="map-label" font-size="11">Hoàng Sa</text>
+                </g>
+                <g class="island-group">
+                    <circle cx="310" cy="430" r="3.5" fill="#FFD600" opacity="0.9"/>
+                    <circle cx="318" cy="425" r="2.5" fill="#FFD600" opacity="0.8"/>
+                    <circle cx="305" cy="422" r="2" fill="#FFD600" opacity="0.8"/>
+                    <circle cx="315" cy="435" r="2" fill="#FFD600" opacity="0.7"/>
+                    <circle cx="322" cy="430" r="1.5" fill="#FFD600" opacity="0.7"/>
+                    <circle cx="308" cy="438" r="1.5" fill="#FFD600" opacity="0.6"/>
+                    <text x="313" y="455" class="map-label" font-size="11">Trường Sa</text>
+                </g>
+                <polygon points="180,135 183,142 190,142 184,147 186,154 180,150 174,154 176,147 170,142 177,142" fill="#FF0000" stroke="#fff" stroke-width="0.5"/>
+                <text x="180" y="125" class="map-label" font-size="10" fill="#fff">Hà Nội</text>
+            </svg>
+        </div>
+        <p class="map-caption reveal">🇻🇳 Việt Nam – Hoàng Sa – Trường Sa: Toàn vẹn lãnh thổ 🇻🇳</p>
+    </section>
+
+    <section class="banner-section">
+        <div class="slogans">
+            <p class="slogan reveal">✦ Đảng Cộng sản Việt Nam quang vinh muôn năm! ✦</p>
+            <p class="slogan reveal">✦ Nước Cộng hòa Xã hội Chủ nghĩa Việt Nam muôn năm! ✦</p>
+            <p class="slogan reveal">✦ Chủ tịch Hồ Chí Minh vĩ đại sống mãi trong sự nghiệp của chúng ta! ✦</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Website cổ động kỷ niệm 81 năm Quốc khánh nước CHXHCN Việt Nam (2/9/1945 – 2/9/2026)</p>
+        <p style="margin-top:0.5rem;">Ảnh: Pexels (Hugo Heimendinger, Craig Adderley, Tuan Vy, HOANG LONG)</p>
+    </footer>
+
+    <script>
+    const canvas = document.getElementById('fireworks-canvas');
+    const ctx = canvas.getContext('2d');
+    let fireworks = [], particles = [];
+    function resizeCanvas() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Firework {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height;
+            this.targetY = Math.random() * canvas.height * 0.4 + 50;
+            this.speed = 3 + Math.random() * 3;
+            this.alive = true;
+            this.color = ['#FFD600','#FF4444','#FFFFFF','#FFA000','#FF6B6B'][Math.floor(Math.random()*5)];
+        }
+        update() { this.y -= this.speed; if (this.y <= this.targetY) { this.explode(); this.alive = false; } }
+        explode() {
+            const count = 30 + Math.floor(Math.random() * 30);
+            for (let i = 0; i < count; i++) {
+                const angle = (Math.PI * 2 / count) * i, speed = 1 + Math.random() * 3;
+                particles.push({ x: this.x, y: this.y, vx: Math.cos(angle)*speed, vy: Math.sin(angle)*speed, life: 60+Math.random()*40, color: this.color, size: 1.5+Math.random()*1.5 });
+            }
+        }
+        draw() { ctx.beginPath(); ctx.arc(this.x, this.y, 2, 0, Math.PI*2); ctx.fillStyle = this.color; ctx.fill(); }
+    }
+
+    function animateFireworks() {
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fillStyle = 'rgba(0,0,0,0.15)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.globalCompositeOperation = 'lighter';
+        if (Math.random() < 0.03) fireworks.push(new Firework());
+        fireworks = fireworks.filter(f => { f.update(); if (f.alive) f.draw(); return f.alive; });
+        particles = particles.filter(p => {
+            p.x += p.vx; p.y += p.vy; p.vy += 0.03; p.life--;
+            const alpha = p.life / 100;
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.size*alpha, 0, Math.PI*2);
+            ctx.fillStyle = p.color; ctx.globalAlpha = alpha; ctx.fill(); ctx.globalAlpha = 1;
+            return p.life > 0;
+        });
+        requestAnimationFrame(animateFireworks);
+    }
+    animateFireworks();
+
+    function revealOnScroll() {
+        document.querySelectorAll('.reveal, .reveal-left').forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+        });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Island glow animation
+    const s = document.createElement('style');
+    s.textContent = '.island-group circle{animation:islandPulse 3s ease-in-out infinite}.island-group circle:nth-child(odd){animation-delay:.5s}@keyframes islandPulse{0%,100%{opacity:.7}50%{opacity:1;filter:drop-shadow(0 0 4px #FFD600)}}';
+    document.head.appendChild(s);
+    </script>
+</body>
+</html>
