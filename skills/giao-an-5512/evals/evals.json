@@ -1,0 +1,26 @@
+{
+  "skill_name": "giao-an-5512",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Soạn giúp mình giáo án theo công văn 5512 nhé.",
+      "expected_output": "Skill kích hoạt và dừng ở Bước 1: hỏi nội dung muốn soạn (tên bài, môn, lớp/cấp, số tiết, bộ sách). Tuyệt đối không tự bịa một bài rồi viết luôn giáo án chi tiết.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Mình dạy Ngữ văn 8 bộ Kết nối tri thức, cần soạn giáo án bài 'Thu điếu' của Nguyễn Khuyến trong 2 tiết. Mình không có file gì thêm.",
+      "expected_output": "Skill nhận đủ thông tin nội dung ở Bước 1 nên bỏ qua hỏi lại; sang Bước 2 xác nhận không có tài liệu nên soạn theo CT GDPT 2018 và lưu ý đối chiếu SGK; rồi dừng ở Bước 3 trình đề mục lớn (mục tiêu kiến thức/năng lực/phẩm chất, tên 4 hoạt động kèm ý tưởng và thời lượng, phân bổ 2 tiết) chờ duyệt. Không nhảy thẳng vào viết chi tiết.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Ok mình duyệt đề mục đó, viết chi tiết ra file luôn đi. (Bối cảnh: đây là lượt tiếp nối, đề mục lớn cho bài 'Lực ma sát' môn KHTN lớp 6, 1 tiết, đã được thống nhất ở lượt trước với 4 hoạt động Mở đầu, Hình thành kiến thức, Luyện tập, Vận dụng.)",
+      "expected_output": "Skill đọc template Phụ lục IV rồi viết file md hoàn chỉnh giao-an-5512-luc-ma-sat.md, đủ I. Mục tiêu (kiến thức/năng lực/phẩm chất), II. Thiết bị dạy học và học liệu, III. Tiến trình dạy học với 4 hoạt động, mỗi hoạt động đủ a) Mục tiêu b) Nội dung c) Sản phẩm d) Tổ chức thực hiện, và mục d trình bày theo 4 bước Giao nhiệm vụ / Thực hiện / Báo cáo thảo luận / Kết luận nhận định. Nội dung bám đúng bài lực ma sát, mục tiêu dùng động từ đo được, không viết lời thoại GV-HS.",
+      "files": [],
+      "assertions": []
+    }
+  ]
+}

@@ -1,1 +1,9 @@
-.DS_Store
+# Ignore all hidden files/folders at any level
+.*
+!.gitignore
+
+# Only track Minilab and skills at the root
+/*
+!/Minilab/
+!/skills/
+!/.gitignore
